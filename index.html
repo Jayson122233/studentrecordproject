@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student CRUD</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Student Records</h1>
+
+ <div id="searchSection">
+    <input type="number" placeholder="Search StudentNo" id="searchId">
+    <button type="button" id="searchButton">Search</button>
+    <button type="button" id="clearSearch">Show All</button>
+  </div>
+  
+  <form id="studentForm">
+    <input type="number" placeholder="Student No" id="StudentNo" required>
+    <input type="text" placeholder="First Name" id="FirstName" required>
+    <input type="text" placeholder="Last Name" id="LastName" required>
+    <input type="text" placeholder="Course" id="Course" required>
+    <input type="number" placeholder="Age" id="Age" required>
+    <input type="text" placeholder="Address" id="Address" required>
+    <button type="submit">Add Student</button>
+  </form>
+
+
+  <table>
+    <thead>
+      <tr>
+        <th>StudentNo</th><th>FirstName</th><th>LastName</th><th>Course</th><th>Age</th><th>Address</th><th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="studentTable"></tbody>
+  </table>
+
+  <script src="script.js"></script>
+</body>
+</html>

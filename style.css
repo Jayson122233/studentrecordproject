@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap');
+
+:root {
+  --bg: #1a1a1a;
+  --surface: #222222;
+  --surface2: #2a2a2a;
+  --border: #383838;
+  --accent: #ffffff;
+  --accent-hover: #cccccc;
+  --danger: #ffffff;
+  --danger-hover: #cccccc;
+  --text: #eeeeee;
+  --text-muted: #888888;
+  --radius: 0px;
+  --radius-sm: 0px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  padding: 40px 32px;
+}
+
+h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: 32px;
+  color: var(--text);
+}
+
+/* ── FORM ── */
+#studentForm {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  background: var(--surface2);
+  padding: 24px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  margin-bottom: 32px;
+}
+
+#studentForm input {
+  flex: 1 1 160px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+#studentForm input::placeholder {
+  color: var(--text-muted);
+}
+
+#studentForm input:focus {
+  border-color: var(--accent);
+}
+
+#studentForm input:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ── BUTTONS ── */
+button {
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 0.875rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px 20px;
+  transition: all 0.15s;
+}
+
+button[type="submit"] {
+  background: var(--accent);
+  color: #111;
+  border-color: var(--accent);
+  white-space: nowrap;
+}
+
+button[type="submit"]:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+/* ── TABLE ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+thead {
+  background: var(--surface2);
+}
+
+th {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+td {
+  padding: 13px 16px;
+  font-size: 0.9rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  transition: background 0.1s;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+tbody tr:hover td {
+  background: var(--surface2);
+}
+
+/* ── ACTION BUTTONS ── */
+td button {
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  margin-right: 6px;
+}
+
+td button:first-child {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+td button:first-child:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+td button:last-child {
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+}
+
+td button:last-child:hover {
+  background: var(--text);
+  color: #fff;
+  border-color: var(--text);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  body { padding: 24px 16px; }
+  h1 { font-size: 1.6rem; }
+  #studentForm input { flex: 1 1 100%; }
+  table { font-size: 0.8rem; }
+  th, td { padding: 10px 10px; }
+}
+
+/* ── SEARCH SECTION ── */
+#searchSection {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+#searchId {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s;
+  flex: 1;
+  max-width: 240px;
+}
+
+#searchId::placeholder {
+  color: var(--text-muted);
+}
+
+#searchId:focus {
+  border-color: var(--accent);
+}
+
+#searchButton {
+  background: var(--accent);
+  color: #111;
+  border-color: var(--accent);
+}
+
+#searchButton:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+#clearSearch {
+  background: var(--surface);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+}
+
+#clearSearch:hover {
+  background: var(--surface2);
+  color: var(--text);
+  border-color: var(--accent);
+}
